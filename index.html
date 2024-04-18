@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./bootstrap.css" />
+    <script src="./bootstrap.js" defer></script>
+    <script src="https://unpkg.com/akar-icons-fonts"></script>
+    <title>Samuel</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="name">
+          <h1>Samuel Portfolio</h1>
+        </div>
+        <div class="links">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="btn-menu">
+          <button
+            class="btn-menu"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasRight"
+            aria-controls="offcanvasRight"
+          >
+            ☰
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <section id="#">
+      <div class="home">
+        <img src="./sam2.jpeg" alt="" />
+        <div class="txt-right">
+          <div>
+            <p>Hello, I'am,</p>
+            <h1>Sammuel M. Gatan</h1>
+            <p>Welcome to my Personal Portfolio</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <section id="about">
+      <div class="about">
+        <div class="about-me">
+          <h1>About</h1>
+          <p>
+            Hello, I'm Sammuel Manalo Gatan, from Uwisan, Calamba, Laguna,
+            currently studying BSIT 2nd year at Laguna State Polytechnic
+            University, <span>Los Baños Campus. Within the IT domain, your strategic
+            vision drives digital transformation, unlocking new opportunities
+            for growth and optimization.</span>
+          </p>
+        </div>
+        <hr />
+        <div class="title">
+          <h1>Skills</h1>
+        </div>
+        <div class="skills">
+          <div>
+            <p>Photo Editing</p>
+            <p>Graphic Design</p>
+            <p>Photo Restorations</p>
+            <p>Web Design</p>
+          </div>
+          <div>
+            <p>Critical Thinking</p>
+            <p>Problem-Solving</p>
+            <p>Time Management</p>
+            <p>Decision-Making</p>
+          </div>
+        </div>
+        <hr />
+        <div class="title">
+          <h1>Picture</h1>
+        </div>
+        <div class="flex">
+          <div class="imgs">
+            <button onclick="prevImage()" class="btn1"><</button>
+            <div id="carousel" class="carousel">
+              <img src="./sam1.jpg" />
+              <img src="./sam3.jpg" />
+              <img src="./sam4.jpeg" />
+            </div>
+            <button onclick="nextImage()" class="btn2">></button>
+          </div>
+        </div>
+        <hr />
+      </div>
+    </section>
+    <section id="contact">
+      <div class="title">
+        <h1>Contacts</h1>
+      </div>
+      <div class="contact">
+        <a href="fb:https://www.facebook.com/gatansam"><i class="ai-facebook-fill"> Facebook</i></a>
+        <a href="https://www.instagram.com/_hayish?igsh=cmk2Y3lpdGI0aG9m"><i class="ai-instagram-fill"> instagram</i></a>
+        <a href="#"><i class="ai-phone"> 09945932684</i></a>
+        <a href="#"><i class="ai-google-contained-fill"> samuelgatan23@gmail.com</i></a>
+      </div>
+    </section><br>
+
+    <footer>
+      <h1>
+        Thank you
+      </h1>
+    </footer>
+
+    <!---Bootstrap sidebar--->
+    <div
+      class="offcanvas offcanvas-end w-50"
+      tabindex="-1"
+      id="offcanvasRight"
+      aria-labelledby="offcanvasRightLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasRightLabel">
+          Menu
+        </h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <a href="#">Home</a><br />
+        <hr />
+        <a href="#about">About</a><br />
+        <hr />
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    let currentIndex = 0;
+    const images = document.querySelectorAll("#carousel img");
+
+    function showImage(index) {
+      images.forEach((img) => {
+        img.style.display = "none";
+      });
+      images[index].style.display = "block";
+    }
+
+    function prevImage() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    }
+
+    function nextImage() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    }
+
+    showImage(currentIndex);
+  </script>
+</html>
